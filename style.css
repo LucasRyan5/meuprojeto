@@ -1,0 +1,194 @@
+/* Estilos globais e refinamentos extras se necessário */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+section[id] {
+    scroll-margin-top: 5.5rem;
+}
+
+.site-header-inner {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+}
+
+.mobile-menu-toggle {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    color: #f8fafc;
+    font-size: 1.125rem;
+    touch-action: manipulation;
+}
+
+.mobile-nav {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0 1.5rem 1rem;
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+    border-top: 1px solid #1e293b;
+    background-color: #0f172a;
+}
+
+#menuMobile[hidden] {
+    display: none;
+}
+
+.mobile-nav a {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    color: #cbd5e1;
+    font-size: 1rem;
+    touch-action: manipulation;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+.mobile-nav .mobile-nav-cta {
+    justify-content: center;
+    margin-top: 0.25rem;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+}
+
+#inicio {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 3px;
+}
+
+#projetos .project-card {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#projetos .project-preview {
+    flex: 0 0 12rem;
+}
+
+#projetos .project-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#projetos .project-card-link {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 639px) {
+    #projetos .project-preview {
+        flex-basis: 11rem;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        scroll-padding-top: calc(4rem + env(safe-area-inset-top));
+    }
+
+    section[id] {
+        scroll-margin-top: calc(4rem + env(safe-area-inset-top));
+    }
+
+    header.fixed {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .site-header-inner {
+        height: 4rem;
+    }
+
+    #inicio {
+        min-height: calc(100vh - env(safe-area-inset-top));
+        min-height: calc(100svh - env(safe-area-inset-top));
+    }
+
+    input,
+    select,
+    textarea {
+        min-height: 3rem;
+        font-size: 16px !important;
+    }
+
+    textarea {
+        min-height: 7rem;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #projetos .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(100, 116, 139, 0.8);
+        box-shadow: 0 16px 36px rgba(2, 6, 23, 0.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    #projetos .project-card {
+        transition: none;
+    }
+
+    #projetos .project-card:hover {
+        transform: none;
+    }
+}
+
+/* Customização leve para scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
