@@ -239,6 +239,7 @@
                                 <option value="landing">Landing Page / Site Institucional</option>
                                 <option value="sistema">Sistema Web / Dashboard / App Web</option>
                                 <option value="cardapio">Cardápio ou Plataforma Interativa</option>
+                                <option value="personalizado">Projeto personalizado</option>
                             </select>
                         </div>
 
@@ -335,6 +336,41 @@
     <footer class="py-8 px-6 bg-dark border-t border-slate-800 text-center text-sm text-slate-500">
         <p>&copy; 2026 Desenvolvido com foco em alta performance. Todos os direitos reservados.</p>
     </footer>
+
+    <div class="sales-chat" id="salesChat">
+        <section class="sales-chat-panel" id="salesChatPanel" aria-label="Consultor virtual" aria-hidden="true" hidden>
+            <header class="sales-chat-header">
+                <div class="sales-chat-avatar" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
+                <div>
+                    <h2>Consultor de projetos</h2>
+                    <p>Encontre a solução ideal para sua ideia</p>
+                </div>
+                <button class="sales-chat-close" id="salesChatClose" type="button" aria-label="Fechar consultor">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </header>
+            <div class="sales-chat-messages" id="salesChatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+            <form class="sales-chat-input" id="salesChatForm">
+                <label class="sr-only" for="salesChatInput">Conte mais sobre sua ideia</label>
+                <input id="salesChatInput" type="text" placeholder="Escreva sua ideia..." autocomplete="off" maxlength="500">
+                <button type="submit" aria-label="Enviar mensagem">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </form>
+        </section>
+        <button class="sales-chat-toggle" id="salesChatToggle" type="button" aria-expanded="false" aria-controls="salesChatPanel" aria-label="Abrir consultor de projetos">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span>Precisa de ajuda?</span>
+        </button>
+    </div>
+
+    <aside class="cookie-notice" id="cookieNotice" aria-label="Aviso sobre cookies" hidden>
+        <div>
+            <p class="cookie-notice-title">Sua privacidade importa</p>
+            <p class="cookie-notice-copy">Este site não usa cookies de rastreamento. Recursos carregados de serviços externos, como fontes e ícones, podem seguir as políticas desses serviços.</p>
+        </div>
+        <button class="cookie-notice-dismiss" id="cookieNoticeDismiss" type="button">Entendi</button>
+    </aside>
 
     <!-- Script JS Externo -->
     <script src="script.js"></script>
